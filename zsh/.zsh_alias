@@ -1,0 +1,42 @@
+# Chrome headless
+alias chl="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --remote-debugging-port=9222"
+alias ccl="/Applications/CocCoc.app/Contents/MacOS/CocCoc --headless --disable-gpu --remote-debugging-port=9222"
+alias ccr="/Applications/CocCoc.app/Contents/MacOS/CocCoc --remote-debugging-port=9233"
+
+# Convert lf2crlf
+alias ems2data="vim -c \"set ff=dos\" -c \"set bomb\" -c \":wq\""
+
+# PHP
+alias php82="/opt/homebrew/opt/php@8.2/bin/php"
+alias php74="/opt/homebrew/opt/php@7.4/bin/php"
+
+# Composer
+alias c74="php74 /opt/local/bin/composer"
+alias c82="php82 /opt/local/bin/composer"
+
+# Artisan
+alias a74="php74 artisan"
+alias a82="php82 artisan"
+
+# Docker
+alias dc="docker compose"
+
+# Vim
+alias vim="nvim"
+
+# File
+alias ll="ls -lG"
+alias lla="ls -lGa"
+
+# Lazy
+alias lg="lazygit"
+alias ld="lazydocker"
+
+# Kubenets
+alias k=kubectl
+alias h=helm
+
+# F :)) 
+alias c="clear"
+
+alias md="merge_develop"
