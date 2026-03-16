@@ -37,10 +37,6 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE'
-]
-
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -59,7 +55,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     inner.vertical =   5
     outer.left =       5
     outer.bottom =     5
-    outer.top =        35
+    outer.top =        5
     outer.right =      5
 
 # 'main' binding mode declaration
@@ -181,13 +177,12 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     alt-shift-y = 'move-node-to-workspace Y'
     alt-shift-z = 'move-node-to-workspace Z'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-    alt-tab = 'workspace-back-and-forth'
-    # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    alt-tab = 'focus-monitor next'
+    alt-shift-tab = 'focus-monitor prev'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+
+    alt-shift-period = 'fullscreen'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -210,10 +205,24 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     shift-down = ['volume set 0', 'mode main']
 
 ## Move app
+## Chat app
 [[on-window-detected]]
-    if.app-id = 'ru.keepcoder.Telegram'
+    if.app-id = 'com.tdesktop.Telegram'
     run = ['move-node-to-workspace C']
 
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
     run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap'
+    run = ['move-node-to-workspace C']
+
+## Note taking app
+[[on-window-detected]]
+    if.app-id = 'notion.id'
+    run = ['move-node-to-workspace N']
+
+[[on-window-detected]]
+    if.app-id = 'md.obsidian'
+    run = ['move-node-to-workspace N']

@@ -5,3 +5,11 @@
 vim.g.autoformat = false
 
 vim.g.lazyvim_php_lsp = "intelephense"
+
+-- Disable the diagnostic
+vim.diagnostic.enable(false)
+
+-- LSP Server to use for Ruby.
+-- Set to "solargraph" to use solargraph instead of ruby_lsp.
+vim.g.lazyvim_ruby_lsp = "solargraph"
+vim.g.lazyvim_ruby_formatter = "rubocop"

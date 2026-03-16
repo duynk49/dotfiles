@@ -1,7 +1,12 @@
 # ======== ZSHRC (interactive shell) ========
+export TERM=xterm-256color
 
 # Use modern completion
 autoload -U compinit && compinit
+
+# Disable homebrew autoupdate & hint
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_HINTS=1
 
 # Faster prompt substitution
 export DISABLE_AUTO_TITLE="true"
@@ -34,7 +39,19 @@ export PATH="/Users/duy/.codeium/windsurf/bin:$PATH"
 export PATH="/Users/duy/Development/SDK/flutter/bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
+eval "$(~/.local/bin/mise activate zsh)"
+
+# Added by Windsurf
+export PATH="/Users/duy.nguyen/.codeium/windsurf/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/duy.nguyen/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/duy.nguyen/.opencode/bin:$PATH
+
+# PHP
+export PATH="/opt/homebrew/opt/php@8.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.4/sbin:$PATH"
