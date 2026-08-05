@@ -1,0 +1,94 @@
+################################
+# FONT
+################################
+
+font-family = "JetBrains Mono"
+font-size = 13.5
+font-synthetic-style = bold,italic,bold-italic
+
+
+################################
+# RENDERING
+################################
+
+alpha-blending = native
+grapheme-width-method = unicode
+
+
+################################
+# THEME
+################################
+
+theme = "Catppuccin Mocha"
+minimum-contrast = 1.1
+bold-color = bright
+
+
+################################
+# TRANSPARENCY (mac)
+################################
+
+#background-opacity = 0.8
+#background-opacity-cells = false
+#background-blur = 20
+
+macos-titlebar-style = transparent
+macos-window-shadow = true
+
+
+################################
+# CURSOR
+################################
+
+cursor-style = block
+cursor-style-blink = false
+cursor-click-to-move = true
+
+
+################################
+# SCROLLBACK
+################################
+
+scrollback-limit = 200000000
+scroll-to-bottom = keystroke,no-output
+
+
+################################
+# SHELL INTEGRATION (SAFE)
+################################
+
+shell-integration-features = no-cursor,title,path
+
+
+################################
+# WINDOW
+################################
+
+window-decoration = auto
+window-save-state = always
+window-new-tab-position = current
+maximize = false
+window-padding-x = 10
+window-padding-y = 10
+
+################################
+# LINKS
+################################
+
+link-url = true
+link-previews = true
+selection-clear-on-typing = true
+selection-clear-on-copy = false
+
+
+################################
+# MAC KEY
+################################
+
+macos-option-as-alt = true
+
+
+################################
+# KEYBINDS (SAFE SET)
+################################
+
