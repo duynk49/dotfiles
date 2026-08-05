@@ -15,9 +15,6 @@ setopt promptsubst
 ## Alias
 source "$HOME/.zsh_alias"
 
-# Starship Prompt
-eval "$(starship init zsh)"
-
 # zoxide (cd thông minh)
 eval "$(zoxide init zsh)"
 
@@ -55,3 +52,22 @@ export PATH=/Users/duy.nguyen/.opencode/bin:$PATH
 # PHP
 export PATH="/opt/homebrew/opt/php@8.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.4/sbin:$PATH"
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/duy.nguyen/.lmstudio/bin"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/duy.nguyen/.local/bin:$PATH"
+
+## Added for sqlite
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+## Added for mysql
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Always keep this in the END ==========
+eval "$(starship init zsh)"
+
+# sentry
+fpath=("/Users/duy.nguyen/.local/share/zsh/site-functions" $fpath)

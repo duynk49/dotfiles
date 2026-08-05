@@ -25,8 +25,16 @@ alias dc="docker compose"
 alias vim="nvim"
 
 # File
-alias ll="ls -lG"
-alias lla="ls -lGa"
+if command -v eza &> /dev/null; then
+    alias ls="eza --icons --group-directories-first"
+    alias l="eza -la --icons --group-directories-first --hyperlink"
+    alias lt="eza --tree --level=2 --icons"
+fi
+
+# Cat
+if command -v bat &> /dev/null; then
+    alias cat="bat --style=plain"
+fi
 
 # Lazy
 alias lg="lazygit"
@@ -117,4 +125,7 @@ alias cl="claude"
 
 ## Tmux cheat
 alias ta='s=$(basename "$PWD"); tmux has-session -t "$s" 2>/dev/null && tmux attach -t "$s" || tmux new -s "$s"'
+
+## Laravel Sail
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
