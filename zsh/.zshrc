@@ -6,7 +6,6 @@ autoload -U compinit && compinit
 
 # Disable homebrew autoupdate & hint
 export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ENV_HINTS=1
 
 # Faster prompt substitution
 export DISABLE_AUTO_TITLE="true"
@@ -16,7 +15,7 @@ setopt promptsubst
 source "$HOME/.zsh_alias"
 
 # zoxide (cd thông minh)
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
 # fzf (fuzzy search)
 # macOS already handles this from brew install -- but keep it clean
@@ -30,7 +29,7 @@ setopt hist_ignore_dups
 setopt share_history
 
 ## MYPATH
-export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/Users/duy/code/utils:$PATH"
 export PATH="/Users/duy/.codeium/windsurf/bin:$PATH"
 export PATH="/Users/duy/Development/SDK/flutter/bin:$PATH"
@@ -38,27 +37,7 @@ export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
-eval "$(~/.local/bin/mise activate zsh)"
-
-# Added by Windsurf
-export PATH="/Users/duy.nguyen/.codeium/windsurf/bin:$PATH"
-
-# Added by Antigravity
-export PATH="/Users/duy.nguyen/.antigravity/antigravity/bin:$PATH"
-
-# opencode
-export PATH=/Users/duy.nguyen/.opencode/bin:$PATH
-
-# PHP
-export PATH="/opt/homebrew/opt/php@8.4/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.4/sbin:$PATH"
-
-# Added by LM Studio CLI tool (lms)
-export PATH="$PATH:/Users/duy.nguyen/.lmstudio/bin"
-
-
-# Added by Antigravity CLI installer
-export PATH="/Users/duy.nguyen/.local/bin:$PATH"
+[ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
 
 ## Added for sqlite
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
@@ -66,8 +45,8 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 ## Added for mysql
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
-# Always keep this in the END ==========
-eval "$(starship init zsh)"
-
 # sentry
-fpath=("/Users/duy.nguyen/.local/share/zsh/site-functions" $fpath)
+fpath=("$HOME/.local/share/zsh/site-functions" $fpath)
+
+# Always keep this in the END ==========
+command -v starship >/dev/null && eval "$(starship init zsh)"
