@@ -3,9 +3,9 @@
 ################################
 
 font-family = "JetBrains Mono"
-font-size = 13.5
+font-size = 14
+font-feature = calt
 font-synthetic-style = bold,italic,bold-italic
-
 
 ################################
 # RENDERING
@@ -14,27 +14,42 @@ font-synthetic-style = bold,italic,bold-italic
 alpha-blending = native
 grapheme-width-method = unicode
 
-
 ################################
-# THEME
+# THEME & COLORS
 ################################
 
-theme = "Catppuccin Mocha"
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#a6adc8
+palette = 8=#585b70
+palette = 9=#f38ba8
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89b4fa
+palette = 13=#f5c2e7
+palette = 14=#94e2d5
+palette = 15=#bac2de
+background = 1e1e2e
+foreground = cdd6f4
+cursor-color = f5e0dc
+cursor-text = 11111b
+selection-background = 353749
+selection-foreground = cdd6f4
+split-divider-color = 313244
 minimum-contrast = 1.1
 bold-color = bright
-
 
 ################################
 # TRANSPARENCY (mac)
 ################################
 
-#background-opacity = 0.8
-#background-opacity-cells = false
-#background-blur = 20
-
-macos-titlebar-style = transparent
-macos-window-shadow = true
-
+background-opacity = 0.90
+background-blur = 20
 
 ################################
 # CURSOR
@@ -43,7 +58,7 @@ macos-window-shadow = true
 cursor-style = block
 cursor-style-blink = false
 cursor-click-to-move = true
-
+mouse-hide-while-typing = true
 
 ################################
 # SCROLLBACK
@@ -52,13 +67,11 @@ cursor-click-to-move = true
 scrollback-limit = 200000000
 scroll-to-bottom = keystroke,no-output
 
-
 ################################
-# SHELL INTEGRATION (SAFE)
+# SHELL INTEGRATION
 ################################
 
 shell-integration-features = no-cursor,title,path
-
 
 ################################
 # WINDOW
@@ -68,8 +81,10 @@ window-decoration = auto
 window-save-state = always
 window-new-tab-position = current
 maximize = false
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 12
+window-padding-y = 12
+macos-titlebar-style = tabs
+macos-window-shadow = true
 
 ################################
 # LINKS
@@ -80,15 +95,25 @@ link-previews = true
 selection-clear-on-typing = true
 selection-clear-on-copy = false
 
-
 ################################
 # MAC KEY
 ################################
 
 macos-option-as-alt = true
 
-
 ################################
-# KEYBINDS (SAFE SET)
+# KEYBINDS
 ################################
 
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+n=new_window
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = opt+left=goto_split:left
+keybind = opt+right=goto_split:right
+keybind = opt+up=goto_split:top
+keybind = opt+down=goto_split:bottom
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+confirm-close-surface = false
