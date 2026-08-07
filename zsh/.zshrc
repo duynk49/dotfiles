@@ -30,13 +30,14 @@ setopt share_history
 
 ## MYPATH
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH="/Users/duy/code/utils:$PATH"
-export PATH="/Users/duy/.codeium/windsurf/bin:$PATH"
-export PATH="/Users/duy/Development/SDK/flutter/bin:$PATH"
+export PATH="$HOME/code/utils:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/Development/SDK/flutter/bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+## Activate zsh
 [ -f ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate zsh)"
 
 ## Added for sqlite
